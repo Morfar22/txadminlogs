@@ -14,7 +14,3 @@ server_scripts {
     'sv_*.lua'
 }
 
-escrow_ignore {
-    'config.lua',
-}
-dependency '/assetpacks'
