@@ -11,6 +11,6 @@ server_only "yes"
 
 server_scripts {
     'config.lua',
-    'server/*.lua'
+	'server/**.lua',
 }
 
