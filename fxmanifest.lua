@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'Mmorfar'
 description 'txAdmin Logs'
-version '1.0.5'
+version '1.0.0'
 
 lua54 'yes'
 
