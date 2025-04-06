@@ -1,5 +1,5 @@
 Config = {
-    txAdminWebhook = 'https://discord.com/api/webhooks/1351147190785150996/yixNYz7YBpiYlaxtqa9z9okc2zgEmDhD59N0db5Pp_mbafuC8Fzblk3f1v3yc0NdzDwX',
+    txAdminWebhook = 'Ur_WEBHOOK_HERE',
     Username = 'txAdmin Logs',
     Avatar = 'https://cdn.discordapp.com/attachments/1023716639289647104/1340433867789697104/image.png?ex=67d2a492&is=67d15312&hm=28f471252a93db338f68ed3ac4b7e522a9a7e3d81f552bbd21356a5e0206444b&',
     FilterAnnouncements = true,
