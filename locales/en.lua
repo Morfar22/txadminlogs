@@ -16,8 +16,9 @@ return {
     ['drunkEffect'] = "Activated drunk effect on %s",
     ['setOnFire'] = "Set %s on fire",
     ['wildAttack'] = "Triggered wild attack on %s",
-    ['showPlayerIDs'] = "Toggled display of player IDs",
-
+    ['showPlayerIDs_on'] = "Toggled display of player IDs",
+    ['showPlayerIDs_off'] = "Removed display of player IDs",
+    
     -- Admin Actions
     ['playerKicked'] = "**Player:** %s\n**Author:** %s\n**Reason:** %s",
     ['playerWarned'] = "**Player:** %s\n**Author:** %s\n**Reason:** %s\n**ID:** %s",
