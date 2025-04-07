@@ -1,31 +1,10 @@
 Config = {
-    txAdminWebhook = 'Ur_WEBHOOK_HERE',
+    txAdminWebhook = 'UR_WEBHOOK_HERE',
     Username = 'txAdmin Logs',
     Avatar = 'https://cdn.discordapp.com/attachments/1023716639289647104/1340433867789697104/image.png?ex=67d2a492&is=67d15312&hm=28f471252a93db338f68ed3ac4b7e522a9a7e3d81f552bbd21356a5e0206444b&',
     FilterAnnouncements = true,
     Timezone = 'Europe/Copenhagen',  
     DateFormat = '%d/%m/%Y %H:%M',
-
-    -- Liste over handlinger
-    ActionMessages = {
-        teleportWaypoint = "Teleporterede til waypoint",
-        spawnVehicle = "Spawnede køretøj: %s",
-        deleteVehicle = "Slettede køretøj",
-        vehicleRepair = "Reparerer køretøj",
-        vehicleBoost = "Boostede køretøj",
-        healSelf = "Helbredte sig selv",
-        healAll = "Helbredte alle spillere",
-        announcement = "Lavede en server-wide fjernelse: %s",
-        clearArea = "Rensede et område med %dm radius",
-        spectatePlayer = "Spectater nu %s",
-        freezePlayer = "Fryser spiller %s",
-        healPlayer = "Helbredte spiller %s",
-        summonPlayer = "Kaldte spiller %s",
-        drunkEffect = "Aktiverede fuldskabseffekt på %s",
-        setOnFire = "Satte %s i brand",
-        wildAttack = "Udløste vild angreb på %s",
-        showPlayerIDs = "Slåede visning af spiller ID'er til/fra"
-    }
 }
 
 -- Fælles hjælpefunktioner
