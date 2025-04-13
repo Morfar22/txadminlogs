@@ -33,7 +33,7 @@ function SendDiscordLog(title, description, color)
         color = color or 16711680, -- Default to red if no color is provided
         footer = { text = os.date(Config.DateFormat) },
         author = {
-            name = locale('webhook_name') or 'txAdmin Logs',
+            name = locale('others.webhook_name') or 'txAdmin Logs',
             icon_url = Config.Avatar or ''
         }
     }}

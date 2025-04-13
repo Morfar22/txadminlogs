@@ -34,7 +34,7 @@ CreateThread(function()
 
                 -- Send til Discord via webhook
                 PerformHttpRequest(Config.txAdminWebhook, function(err, text, headers) end, 'POST', json.encode({
-                    username = locale('webhook_name'),
+                    username = locale('others.webhook_name'),
                     avatar_url = Config.Avatar,
                     embeds = { embed }
                 }), { ['Content-Type'] = 'application/json' })
