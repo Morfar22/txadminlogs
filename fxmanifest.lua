@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'Mmorfar'
 description 'txAdmin Logs'
-version '1.0.0'
+version '2.0.0'
 lua54 'yes'
 
 ox_lib 'locale'
