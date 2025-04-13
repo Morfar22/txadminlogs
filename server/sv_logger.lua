@@ -1,3 +1,5 @@
+local Config = lib.load('config')
+
 -- =============================================
 --  Logger Core
 -- =============================================
@@ -5,7 +7,7 @@ local loggerBuffer = {}
 
 -- Logger function
 local function logger(source, type, data)
-    loggerBuffer[#loggerBuffer+1] = {
+    loggerBuffer[#loggerBuffer + 1] = {
         src = source,
         type = type,
         data = data or false
@@ -18,22 +20,22 @@ CreateThread(function()
         Wait(1000)
         if #loggerBuffer > 0 then
             for _, log in ipairs(loggerBuffer) do
-                -- Opret Discord-embed
+                -- Create Discord embed
                 local embed = {
-                    title = "txAdmin Log",
+                    title = 'txAdmin Log',
                     description = log.data.message,
-                    color = 3447003, -- Blå farve
+                    color = 3447003, -- Blue color
                     fields = {
-                        { name = "Handling", value = log.data.action, inline = true },
-                        { name = "Staff", value = getLogPlayerName(log.src), inline = true }
+                        { name = 'Action', value = log.data.action,           inline = true },
+                        { name = 'Staff',    value = GetLogPlayerName(log.src), inline = true }
                     },
                     footer = { text = os.date('%d/%m/%Y %H:%M') }
                 }
 
                 -- Send til Discord via webhook
                 PerformHttpRequest(Config.txAdminWebhook, function(err, text, headers) end, 'POST', json.encode({
-                    username = "txAdmin Logs",
-                    avatar_url = "https://cdn.discordapp.com/attachments/1023716639289647104/1340433867789697104/image.png",
+                    username = locale('webhook_name'),
+                    avatar_url = Config.Avatar,
                     embeds = { embed }
                 }), { ['Content-Type'] = 'application/json' })
             end
@@ -42,33 +44,12 @@ CreateThread(function()
     end
 end)
 
-
--- =============================================
---  Locale Configuration
--- =============================================
-local CurrentLocale = 'en' -- Change to 'da' for Danish
-local localesPath = ('locales/%s.lua'):format(CurrentLocale)
-local localesFile = LoadResourceFile(GetCurrentResourceName(), localesPath)
-assert(localesFile, ('Locale file "%s" not found!'):format(localesPath))
-
-local Locales = assert(
-    load(localesFile, ('@@%s'):format(localesPath)),
-    ('Failed to parse locale file: %s'):format(localesPath)
-)()
-
--- =============================================
---  Helper Functions
--- =============================================
-function Translate(key, ...)
-    return Locales[key] and string.format(Locales[key], ...) or key
-end
-
-function getLogPlayerName(src)
-    if type(src) == 'number' then 
-        local name = string.sub(GetPlayerName(src) or Translate('unknownPlayer'), 1, 75)
+function GetLogPlayerName(src)
+    if type(src) == 'number' then
+        local name = string.sub(GetPlayerName(src) or locale('self_menu.unknown_player'), 1, 75)
         return ('[#%d] %s'):format(src, name)
     else
-        return ('[??] %s'):format(Translate('unknownPlayer'))
+        return ('[??] %s'):format(locale('self_menu.unknown_player'))
     end
 end
 
@@ -84,87 +65,70 @@ AddEventHandler('txsv:logger:menuEvent', function(source, action, allowed, data)
     -- SELF menu options
     if action == 'playerModeChanged' then
         local modeNameMap = {
-            godmode = Translate('God Mode'),
-            noclip = Translate('Noclip'),
-            superjump = Translate('Super Jump'),
-            none = Translate('Standard Mode'),
-            unknown = Translate('Unknown Mode')
+            godmode = locale('self_menu.god_mode'),
+            noclip = locale('self_menu.noclip'),
+            superjump = locale('self_menu.super_jump'),
+            none = locale('self_menu.standard_mode'),
+            unknown = locale('self_menu.unknown_mode')
         }
-        message = Translate('playerModeChanged', getLogPlayerName(source), modeNameMap[data] or modeNameMap.unknown)
-
+        message = locale('self_menu.player_mode_changed', GetLogPlayerName(source), modeNameMap[data] or modeNameMap.unknown)
     elseif action == 'teleportWaypoint' then
-        message = Translate('teleportWaypoint')
-
+        message = locale('self_menu.teleport_waypoint')
     elseif action == 'teleportCoords' then
         if type(data) ~= 'table' then return end
-        message = Translate('teleportCoords', data.x or 0.0, data.y or 0.0, data.z or 0.0)
-
+        message = locale('self_menu.teleport_coords', data.x or 0.0, data.y or 0.0, data.z or 0.0)
     elseif action == 'spawnVehicle' then
         if type(data) ~= 'string' then return end
-        message = Translate('spawnVehicle', data)
-
+        message = locale('self_menu.spawn_vehicle', data)
     elseif action == 'deleteVehicle' then
-        message = Translate('deleteVehicle')
-
+        message = locale('self_menu.delete_vehicle')
     elseif action == 'vehicleRepair' then
-        message = Translate('vehicleRepair')
-
+        message = locale('self_menu.vehicle_repair')
     elseif action == 'vehicleBoost' then
-        message = Translate('vehicleBoost')
-
+        message = locale('self_menu.vehicle_boost')
     elseif action == 'healSelf' then
-        message = Translate('healSelf')
-
+        message = locale('self_menu.heal_self')
     elseif action == 'healAll' then
-        message = Translate('healAll')
-
+        message = locale('self_menu.heal_all')
     elseif action == 'announcement' then
         if type(data) ~= 'string' then return end
-        message = Translate('announcement', data)
-
+        message = locale('self_menu.announcement_made', data)
     elseif action == 'clearArea' then
         if type(data) ~= 'number' then return end
-        message = Translate('clearArea', data)
+        message = locale('self_menu.clear_area', data)
 
-    -- INTERACTION modal options
+        -- INTERACTION modal options
     elseif action == 'spectatePlayer' then
-        message = Translate('spectatePlayer', getLogPlayerName(data))
-
+        message = locale('self_menu.spectate_player', GetLogPlayerName(data))
     elseif action == 'freezePlayer' then
-        message = Translate('freezePlayer', getLogPlayerName(data))
-
+        message = locale('self_menu.freeze_player', GetLogPlayerName(data))
     elseif action == 'teleportPlayer' then
         if type(data) ~= 'table' then return end
-        local playerName = getLogPlayerName(data.target)
-        message = Translate('teleportPlayer', playerName, data.x or 0.0, data.y or 0.0, data.z or 0.0)
-
+        local playerName = GetLogPlayerName(data.target)
+        message = locale('self_menu.teleport_to_player', playerName, data.x or 0.0, data.y or 0.0, data.z or 0.0)
     elseif action == 'healPlayer' then
-        message = Translate('healPlayer', getLogPlayerName(data))
-
+        message = locale('self_menu.heal_player', GetLogPlayerName(data))
     elseif action == 'summonPlayer' then
-        message = Translate('summonPlayer', getLogPlayerName(data))
+        message = locale('self_menu.summon_player', GetLogPlayerName(data))
 
-    -- TROLL modal options
+        -- TROLL options
     elseif action == 'drunkEffect' then
-        message = Translate('drunkEffect', getLogPlayerName(data))
-
+        message = locale('self_menu.drunk_effect', GetLogPlayerName(data))
     elseif action == 'setOnFire' then
-        message = Translate('setOnFire', getLogPlayerName(data))
-
+        message = locale('self_menu.set_on_fire', GetLogPlayerName(data))
     elseif action == 'wildAttack' then
-        message = Translate('wildAttack', getLogPlayerName(data))
-
+        message = locale('self_menu.wild_attack', GetLogPlayerName(data))
     elseif action == 'showPlayerIDs' then
         if type(data) ~= 'boolean' then return end
         if data then
-            message = Translate('showPlayerIDs_on')
+            message = locale('self_menu.show_player_id_on')
         else
-            message = Translate('showPlayerIDs_off')
+            message = locale('self_menu.show_player_id_off')
         end
 
-    -- Unknown event fallback (logs a warning)
+        -- Unknown event fallback logs a warning
     else
-        print("^3[WARNING]^0 Unknown menu event: " .. tostring(action))
+        lib.print.warn(locale('unkown_event', action))
         return -- Do not log unknown actions to Discord/log buffer.
     end
 
@@ -174,4 +138,3 @@ AddEventHandler('txsv:logger:menuEvent', function(source, action, allowed, data)
         message = message,
     })
 end)
-

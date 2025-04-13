@@ -1,0 +1,87 @@
+{
+    "self_menu": {
+        "player_mode_changed": "**Player Mode Changed:** Player **%s** changed mode to **%s**",
+        "god_mode": "God Mode",
+        "noclip": "Noclip",
+        "super_jump": "Super Jump",
+        "standard_mode": "Standard Mode",
+        "unknown_mode": "Unknown Mode",
+        "teleport_waypoint": "Teleported to waypoint",
+        "teleport_coords": "Teleported to Coord: vec3(%.2f, %.2f, %.2f)",
+        "spawn_vehicle": "Spawned vehicle: %s",
+        "delete_vehicle": "Deleted vehicle",
+        "vehicle_repair": "Repaired vehicle",
+        "vehicle_boost": "Boosted vehicle",
+        "heal_self": "Healed self",
+        "heal_all": "Healed all players",
+        "announcement_made": "Made a server-wide announcement: %s",
+        "clear_area": "Cleared an area with %dm radius",
+        "spectate_player": "Now spectating %s",
+        "freeze_player": "Freezing player %s",
+        "teleport_to_player": "Teleported To Player | %s | vec3(%.2f, %.2f, %.2f)",
+        "heal_player": "Healed player %s",
+        "summon_player": "Summoned player %s",
+        "drunk_effect": "Activated drunk effect on %s",
+        "set_on_fire": "Set %s on fire",
+        "wild_attack": "Triggered wild attack on %s",
+        "show_player_id_on": "Toggled display of player IDs On",
+        "show_player_id_off": "Toggled display of player IDs Off"
+    },
+
+    "others": {
+        "webhook_name" : "txAdmin Logs",
+        "unknown_player": "Unknown player",
+        "server_action": "Server Action",
+        "permanent_ban": "Permanent Ban",
+        "no_reason_given": "No reason given",
+        "unknown_id": "Unknown ID",
+        "no_msg": "No message Provided"
+    },
+
+    "kick": {
+        "title": "Player Kicked",
+        "description": "**Player:** %s\n**Author:** %s\n**Reason:** %s"
+    },
+    
+    "warn": {
+        "title": "Player Warned",
+        "description": "**Player:** %s\n**Author:** %s\n**Reason:** %s\n**ID:** %s"
+    },
+
+    "ban": {
+        "title": "Player Banned",
+        "description": "**Player:** %s\n**Author:** %s\n**Reason:** %s\n**ID:** %s\n**Expires:** %s",
+        "offline_ban": "Offline Player Banned"
+    },
+
+    "whiteliste": {
+        "title": "Player Whitelisted",
+        "description": "**Identifier:** %s\n**Author:** %s\n**ID:** %s"
+    },
+
+    "announce": {
+        "title": "Announcement Made",
+        "message": "**Author:** %s\n**Message:** %s"
+    },
+
+    "config": {
+        "title": "Config settings changed.",
+        "description": "Configuration settings have been changed. If this was not you, check immediately.",
+    },
+
+    "heal": {
+        "title": "Player Healed",
+        "player_name": "**Player:** %s"
+    },
+
+    "shutdown": {
+        "title": "Server Shutting Down",
+        "description": "**Author:** %s\n**Message:** %s\n**Delay:** **%dms**"
+    },
+
+    "print": {
+        "fail_log": "Failed to send log (HTTP %s): %s",
+        "info_missing": "'Missing title or description for Discord log.",
+        "unkown_event": "Unknown menu event: %s"
+    }
+}
