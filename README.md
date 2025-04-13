@@ -1,34 +1,60 @@
-An sophisticated tx logging system!
+# 🚨 Sophisticated txAdmin Logging System
 
-Ingame admin menu
-This logs stuff like
-Teleport to waypoint
-Teleport too coords
-Spawn vehicle
-Delete vehicle
-Repair vehicle
-Boost vehicle
-Heal self
-Heal everyone
-Announcement
-Clear area
-Spectate player
-Freeze player
-Heal player
-Summon player
-the troll options is also logged like drunk, wild attack and fire
-logs when the show player ID´s is enabled
-Activate God mode
-Activate Noclip
-Noclip Super Jump
-and when god mode, noclip and superjump is removed
+An advanced and clean logging system for txAdmin events with full support for **ox_lib**!
 
-webpage logs
-If a player is kicked
-if a player got a warning
-if a player gets banned
-If a player is allowlisted
-When a announcement is made
-if the config for txadmin is changed
-Heal player
-And if the server is restarting/shutting down
+---
+
+## 🛠️ In-Game Admin Menu Logging
+
+This system logs various admin actions, including:
+
+- 📍 Teleport to waypoint  
+- 🧭 Teleport to coordinates  
+- 🚗 Spawn vehicle  
+- 🗑️ Delete vehicle  
+- 🔧 Repair vehicle  
+- 🚀 Boost vehicle  
+- ❤️ Heal self  
+- 💊 Heal everyone  
+- 📢 Announcement  
+- 🧹 Clear area  
+- 👀 Spectate player  
+- ❄️ Freeze player  
+- 🩺 Heal player  
+- 🧙 Summon player  
+
+### 🐸 Troll Options Logged:
+
+- 🍻 Drunk effect  
+- 🐺 Wild attack  
+- 🔥 Set on fire  
+
+### 👁️ Player ID Toggle:
+
+- 🆔 Show player IDs enabled/disabled  
+
+### 🛡️ Modes Toggled:
+
+- 👑 God Mode  
+- 🕹️ Noclip  
+- 🦘 Super Jump  
+- ❌ Removed: God Mode, Noclip, Super Jump  
+
+---
+
+## 🌐 Webpage (txAdmin Panel) Logs
+
+Includes logging for:
+
+- 👢 Player kicked  
+- ⚠️ Player warned  
+- 🔨 Player banned  
+- ✅ Player allowlisted  
+- 📣 Announcement made  
+- ⚙️ Config changes  
+- 🩹 Heal player  
+- 🔁 Server restart/shutdown  
+
+---
+
+🔧 Built with performance in mind using  [**ox_lib**](https://github.com/overextended/ox_lib/releases)’s locale system and resource loading module!

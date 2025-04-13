@@ -4,12 +4,17 @@ game 'gta5'
 author 'Mmorfar'
 description 'txAdmin Logs'
 version '1.0.0'
-
 lua54 'yes'
 
-server_only 'yes'
+ox_lib 'locale'
+
+shared_script '@ox_lib/init.lua'
 
 server_scripts {
+    'server/*.lua',
+}
+
+files {
     'config.lua',
-    'server/*.lua',   -- Includes all Lua files in the "server" folder
+    'locales/*.json',
 }

@@ -1,0 +1,87 @@
+{
+    "self_menu": {
+        "player_mode_changed": "**Spillertilstand ændret:** Spiller **%s** ændrede tilstand til **%s**",
+        "god_mode": "Gudtilstand",
+        "noclip": "Noclip",
+        "super_jump": "Superhop",
+        "standard_mode": "Standardtilstand",
+        "unknown_mode": "Ukendt tilstand",
+        "teleport_waypoint": "Teleport til waypoint",
+        "teleport_coords": "Teleport til koordinater: vec3(%.2f, %.2f, %.2f)",
+        "spawn_vehicle": "Spawner køretøj: %s",
+        "delete_vehicle": "Slettede køretøj",
+        "vehicle_repair": "Reparerede køretøj",
+        "vehicle_boost": "Boostede køretøj",
+        "heal_self": "Helbredte sig selv",
+        "heal_all": "Helbredte alle spillere",
+        "announcement_made": "Lavede en server-wide meddelelse: %s",
+        "clear_area": "Ryddede et område med %dm radius",
+        "spectate_player": "Observerer nu %s",
+        "freeze_player": "Fryser spiller %s",
+        "teleport_to_player": "Teleporteret til spiller | %s | vec3(%.2f, %.2f, %.2f)",
+        "heal_player": "Helbredte spiller %s",
+        "summon_player": "Kaldte spiller %s",
+        "drunk_effect": "Aktiverede fuld effekt på %s",
+        "set_on_fire": "Satte %s i brand",
+        "wild_attack": "Udløste vildt angreb på %s",
+        "show_player_id_on": "Aktiverede visning af spiller-ID'er",
+        "show_player_id_off": "Deaktiverede visning af spiller-ID'er"
+    },
+
+    "others": {
+        "webhook_name": "txAdmin Logfiler",
+        "unknown_player": "Ukendt spiller",
+        "server_action": "Serverhandling",
+        "permanent_ban": "Permanent ban",
+        "no_reason_given": "Ingen grund angivet",
+        "unknown_id": "Ukendt ID",
+        "no_msg": "Ingen besked angivet"
+    },
+
+    "kick": {
+        "title": "Spiller smidt ud",
+        "description": "**Spiller:** %s\n**Forfatter:** %s\n**Grund:** %s"
+    },
+    
+    "warn": {
+        "title": "Spiller advaret",
+        "description": "**Spiller:** %s\n**Forfatter:** %s\n**Grund:** %s\n**ID:** %s"
+    },
+
+    "ban": {
+        "title": "Spiller bannet",
+        "description": "**Spiller:** %s\n**Forfatter:** %s\n**Grund:** %s\n**ID:** %s\n**Udløber:** %s",
+        "offline_ban": "Offline spiller bannet"
+    },
+
+    "whiteliste": {
+        "title": "Spiller whitelistet",
+        "description": "**Identifikator:** %s\n**Forfatter:** %s\n**ID:** %s"
+    },
+
+    "announce": {
+        "title": "Meddelelse lavet",
+        "message": "**Forfatter:** %s\n**Besked:** %s"
+    },
+
+    "config": {
+        "title": "Konfigurationsindstillinger ændret.",
+        "description": "Konfigurationsindstillinger er blevet ændret. Hvis det ikke var dig, så tjek straks."
+    },
+
+    "heal": {
+        "title": "Spiller helbredt",
+        "player_name": "**Spiller:** %s"
+    },
+
+    "shutdown": {
+        "title": "Server lukker ned",
+        "description": "**Forfatter:** %s\n**Besked:** %s\n**Forsinkelse:** **%dms**"
+    },
+
+    "print": {
+        "fail_log": "Kunne ikke sende log (HTTP %s): %s",
+        "info_missing": "Mangler titel eller beskrivelse til Discord-log.",
+        "unkown_event": "Ukendt menubegivenhed: %s"
+    }
+}
