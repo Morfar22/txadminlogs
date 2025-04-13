@@ -57,4 +57,4 @@ Includes logging for:
 
 ---
 
-🔧 Built with performance in mind using  "[**ox_lib**](https://github.com/overextended/ox_lib/releases)"’s locale system and resource loading module!
+🔧 Built with performance in mind using  [**ox_lib**](https://github.com/overextended/ox_lib/releases)’s locale system and resource loading module!
